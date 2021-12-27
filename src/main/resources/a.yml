@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id : r2
+          uri : lb://service-administration #dans le cas dans le register eureka si non uri : http://localhost:9995
+          predicates :
+            - Path= /**
+#le proxy fais une correspondance entre le path et uri =>le client ne connait pas le nom de l'application'    
+  
+          
